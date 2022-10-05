@@ -4,6 +4,7 @@ $(document).ready(function(){
         autoWidth: true,
         lazyLoad:true,
         dots: true,
+        loop: true,
         margin: 10,
         autoplay:true,
         autoplayTimeout:3000,
@@ -12,7 +13,19 @@ $(document).ready(function(){
 
     $(".navbar__link").off('click').on('click', function(){
         $(".navbar__link").removeClass("active");
-        $(this).addClass("active")
+        $(this).addClass("active");
+
+        setTimeout(() => {
+            if ($(".navbar ul").hasClass("show")) {
+                $(".navbar ul").removeClass("show");
+                $(".navbar-overlay").removeClass("show");
+            }
+        }, 50);
+    });
+    
+    $(".navbar-overlay").click(function(){
+        $(".navbar ul").removeClass("show");
+        $(".navbar-overlay").removeClass("show");
     });
 
     $(".beranda__image-group").attr("data-scroll", "show");
@@ -35,7 +48,15 @@ $(document).ready(function(){
     $(".menu-button").click(function(e){
         e.preventDefault();
 
-        $(".navbar ul").toggleClass("show")
+        $(".navbar ul").toggleClass("show");
+
+        setTimeout(() => {
+            if ($(".navbar ul").hasClass("show")) {
+                $(".navbar-overlay").addClass("show")
+            }else{   
+                $(".navbar-overlay").removeClass("show")
+            }
+        }, 50);
     })
 
 })
