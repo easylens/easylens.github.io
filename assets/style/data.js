@@ -239,7 +239,7 @@ function getDetailCameraData(id){
         '               <svg width="22" height="22" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">'+
         '                  <path d="M5 15H25M16.25 6.25L25 15L16.25 23.75" stroke="black" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>'+
         '               </svg>'+
-        '               Kembali ke Halaman Produk & Jasa</a>'+
+        '               Lihat Semua Produk</a>'+
         '            <div class="detail-produk__main">'+
         '                <div class="detail-produk__image">'+
         '                    <img src="/assets/img/produk/'+ imageName +'" alt="'+name+'">'+
