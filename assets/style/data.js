@@ -33,9 +33,9 @@ var cameraData = [
             "description" : "Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur nihil explicabo animi nisi labore recusandae aspernatur ad qui magni modi tempore natus minus veritatis accusamus itaque excepturi cumque, reiciendis rerum!",
             "image" : "Canon_EOS_1100D_1.jpg.webp",
             "price" : {
-                "lite" : 50000,
-                "medium" : 90000,
-                "large" : 130000,
+                "lite" : 60000,
+                "medium" : 100000,
+                "large" : 140000,
             },
         },
         {
@@ -44,9 +44,9 @@ var cameraData = [
             "description" : "Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur nihil explicabo animi nisi labore recusandae aspernatur ad qui magni modi tempore natus minus veritatis accusamus itaque excepturi cumque, reiciendis rerum!",
             "image" : "Canon-EOS-1200D-Harga-canon-eos-1200D.webp",
             "price" : {
-                "lite" : 60000,
-                "medium" : 100000,
-                "large" : 140000,
+                "lite" : 70000,
+                "medium" : 110000,
+                "large" : 150000,
             },
         },
         {
@@ -55,9 +55,9 @@ var cameraData = [
             "description" : "Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur nihil explicabo animi nisi labore recusandae aspernatur ad qui magni modi tempore natus minus veritatis accusamus itaque excepturi cumque, reiciendis rerum!",
             "image" : "canon-eos-600d.jpg",
             "price" : {
-                "lite" : 70000,
-                "medium" : 110000,
-                "large" : 150000,
+                "lite" : 80000,
+                "medium" : 120000,
+                "large" : 160000,
             },
         },
         {
@@ -66,9 +66,9 @@ var cameraData = [
             "description" : "Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur nihil explicabo animi nisi labore recusandae aspernatur ad qui magni modi tempore natus minus veritatis accusamus itaque excepturi cumque, reiciendis rerum!",
             "image" : "canon-650d-18-135mm-stm-review.jpg",
             "price" : {
-                "lite" : 75000,
-                "medium" : 115000,
-                "large" : 155000,
+                "lite" : 85000,
+                "medium" : 125000,
+                "large" : 165000,
             },
         },
         {
@@ -77,9 +77,9 @@ var cameraData = [
             "description" : "Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur nihil explicabo animi nisi labore recusandae aspernatur ad qui magni modi tempore natus minus veritatis accusamus itaque excepturi cumque, reiciendis rerum!",
             "image" : "canon-eos-60d.jpg",
             "price" : {
-                "lite" : 80000,
-                "medium" : 120000,
-                "large" : 160000,
+                "lite" : 90000,
+                "medium" : 130000,
+                "large" : 170000,
             },
         },
         {
@@ -88,9 +88,9 @@ var cameraData = [
             "description" : "Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur nihil explicabo animi nisi labore recusandae aspernatur ad qui magni modi tempore natus minus veritatis accusamus itaque excepturi cumque, reiciendis rerum!",
             "image" : "canon-eos-70d.jpg",
             "price" : {
-                "lite" : 90000,
-                "medium" : 130000,
-                "large" : 170000,
+                "lite" : 100000,
+                "medium" : 140000,
+                "large" : 180000,
             },
         },
         {
@@ -100,8 +100,8 @@ var cameraData = [
             "image" : "go-pro-hero-3.webp",
             "price" : {
                 "lite" : "",
-                "medium" : 80000,
-                "large" : 100000,
+                "medium" : 90000,
+                "large" : 110000,
             },
         },
         {
@@ -112,7 +112,7 @@ var cameraData = [
             "price" : {
                 "lite" : "",
                 "medium" : "",
-                "large" : 400000,
+                "large" : 410000,
             },
         },
         // {
@@ -131,7 +131,7 @@ var cameraData = [
 
 function getSomeCameraData(){
     
-    for (let i = 0; i < cameraData.length; i++) {
+    for (let i = 0; i < 6; i++) {
         let data = cameraData[i];
         let id = data.id;
         let name = data.name;
@@ -144,12 +144,12 @@ function getSomeCameraData(){
 
         if (litePrice == "") {
             if (mediumPrice == "") {
-                displayNumberFormat =  numberFormat(largePrice + 10000)
+                displayNumberFormat =  numberFormat(largePrice)
             } else {
-                displayNumberFormat =  numberFormat(mediumPrice + 10000)
+                displayNumberFormat =  numberFormat(mediumPrice)
             }
         } else {
-            displayNumberFormat =  numberFormat(litePrice + 10000)
+            displayNumberFormat =  numberFormat(litePrice)
         }
         
         let productBoxHtml = '<a href="detail-product.html?product='+ id +'" class="produk__box">'+ 
@@ -172,6 +172,7 @@ function getSomeCameraData(){
 }
 
 function getAllCameraData(){
+    console.log(cameraData)
     for (let i = 0; i < cameraData.length; i++) {
         let data = cameraData[i];
         let name = data.name;
@@ -185,12 +186,12 @@ function getAllCameraData(){
 
         if (litePrice == "") {
             if (mediumPrice == "") {
-                displayNumberFormat =  numberFormat(largePrice + 10000)
+                displayNumberFormat =  numberFormat(largePrice)
             } else {
-                displayNumberFormat =  numberFormat(mediumPrice + 10000)
+                displayNumberFormat =  numberFormat(mediumPrice)
             }
         } else {
-            displayNumberFormat =  numberFormat(litePrice + 10000)
+            displayNumberFormat =  numberFormat(litePrice)
         }
         let productBoxHtml = '<a href="detail-product.html?product='+ id +'" class="produk-page__box">'+
             '                    <div class="produk__box-image">'+
@@ -228,9 +229,9 @@ function getDetailCameraData(id){
         let name = data.name;
         let imageName = data.image;
         let price = data.price;
-        let litePrice = numberFormat(price.lite + 10000);
-        let mediumPrice = numberFormat(price.medium + 10000);
-        let largePrice = numberFormat(price.large + 10000);
+        let litePrice = numberFormat(price.lite);
+        let mediumPrice = numberFormat(price.medium);
+        let largePrice = numberFormat(price.large);
 
         if (dataId == id) {
             
