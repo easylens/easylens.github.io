@@ -21,9 +21,11 @@ function showPrice(button){
 function orderWhatsapp(button){
 
     let title = $(button).parents(".detail-produk__text").find(".detail-produk__title").text();
-    let price = $(".button-variant.selected").attr("data-price")
+    let price = $(".button-variant.selected").attr("data-price");
+    let duration = $(".button-variant.selected").attr("variant-value");
+    let stringDuration = duration+"%20Jam";
     let encodedTitle = encodeURI(title)
-    let link = 'https://wa.me/6289611577585?text=Halo%20Admin%20EasyLens%2C%20saya%20ingin%20memesan%20'+encodedTitle+'%20dengan%20harga%20Rp.%20bla%20bla%20bala'
+    let link = 'https://wa.me/6283861527757?text=Halo%20Admin%20*EasyLens*%2C%20saya%20ingin%20memesan%20*'+encodedTitle+'*%20selama%20*'+stringDuration+'*%20seharga%20Rp.%20*'+price+'*'
     if(price != undefined){
         window.open(link, '_blank')
     }
