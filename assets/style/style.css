@@ -882,16 +882,39 @@ body::-webkit-scrollbar-thumb:hover{
 
 #detail-produk__wrapper{
     min-height: 100vh;
-    padding-top: 150px;
+    padding-top: 100px;
     padding-bottom: 50px;
 }
 
 .detail-produk__content{
     display: flex;
     flex-direction: column;
-    align-items: stretch;
     justify-content: center;
     gap: 75px;
+}
+
+.back-link{
+    font-weight: var(--semibold);
+    font-size: var(--fs-body);
+    background-color: #fff;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    gap: 15px;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-align: left;
+    align-self: flex-start;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+}
+
+.back-link svg{
+    transform: rotate(-180deg);
+    -webkit-transform: rotate(-180deg);
+    -moz-transform: rotate(-180deg);
+    -ms-transform: rotate(-180deg);
+    -o-transform: rotate(-180deg);
 }
 
 .detail-produk__main{

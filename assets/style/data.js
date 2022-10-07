@@ -131,7 +131,7 @@ var cameraData = [
 
 function getSomeCameraData(){
     
-    for (let i = 0; i < 6; i++) {
+    for (let i = 0; i < cameraData.length; i++) {
         let data = cameraData[i];
         let id = data.id;
         let name = data.name;
@@ -144,12 +144,12 @@ function getSomeCameraData(){
 
         if (litePrice == "") {
             if (mediumPrice == "") {
-                displayNumberFormat =  numberFormat(largePrice)
+                displayNumberFormat =  numberFormat(largePrice + 10000)
             } else {
-                displayNumberFormat =  numberFormat(mediumPrice)
+                displayNumberFormat =  numberFormat(mediumPrice + 10000)
             }
         } else {
-            displayNumberFormat =  numberFormat(litePrice)
+            displayNumberFormat =  numberFormat(litePrice + 10000)
         }
         
         let productBoxHtml = '<a href="detail-product.html?product='+ id +'" class="produk__box">'+ 
@@ -172,7 +172,6 @@ function getSomeCameraData(){
 }
 
 function getAllCameraData(){
-    console.log(cameraData)
     for (let i = 0; i < cameraData.length; i++) {
         let data = cameraData[i];
         let name = data.name;
@@ -186,12 +185,12 @@ function getAllCameraData(){
 
         if (litePrice == "") {
             if (mediumPrice == "") {
-                displayNumberFormat =  numberFormat(largePrice)
+                displayNumberFormat =  numberFormat(largePrice + 10000)
             } else {
-                displayNumberFormat =  numberFormat(mediumPrice)
+                displayNumberFormat =  numberFormat(mediumPrice + 10000)
             }
         } else {
-            displayNumberFormat =  numberFormat(litePrice)
+            displayNumberFormat =  numberFormat(litePrice + 10000)
         }
         let productBoxHtml = '<a href="detail-product.html?product='+ id +'" class="produk-page__box">'+
             '                    <div class="produk__box-image">'+
@@ -229,13 +228,18 @@ function getDetailCameraData(id){
         let name = data.name;
         let imageName = data.image;
         let price = data.price;
-        let litePrice = numberFormat(price.lite);
-        let mediumPrice = numberFormat(price.medium);
-        let largePrice = numberFormat(price.large);
+        let litePrice = numberFormat(price.lite + 10000);
+        let mediumPrice = numberFormat(price.medium + 10000);
+        let largePrice = numberFormat(price.large + 10000);
 
         if (dataId == id) {
             
         var detailProdukHtml = '<div class="detail-produk__content">'+
+        '            <a href="product.html" class="back-link">'+
+        '               <svg width="22" height="22" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">'+
+        '                  <path d="M5 15H25M16.25 6.25L25 15L16.25 23.75" stroke="black" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>'+
+        '               </svg>'+
+        '               Kembali ke Halaman Produk & Jasa</a>'+
         '            <div class="detail-produk__main">'+
         '                <div class="detail-produk__image">'+
         '                    <img src="/assets/img/produk/'+ imageName +'" alt="'+name+'">'+
