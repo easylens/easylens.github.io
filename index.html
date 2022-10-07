@@ -15,12 +15,19 @@
 
     <link rel="stylesheet" href="./assets/style/style.css">
 
-    <title>EasyLens</title>
+    <title>EasyLens - Halaman Utama</title>
 </head>
 <body>
+
+    <div class="loader">
+        <div class="loader__circle">
+        </div>
+        <img class="loader__image" src="./assets/icon/logo-loader.svg" alt="Easy Lens Logo">
+    </div>
+
     <nav class="navbar">
         <div class="content-wrapper">
-            <a href="#" class="navbar__brand">Easy<span class="highlighted-text">Lens</span></a>
+            <a href="index.html" class="navbar__brand">Easy<span class="highlighted-text">Lens</span></a>
 
             <ul>
                 <li class="navbar__list"><a href="#beranda" class="navbar__link active">Beranda</a></li>
@@ -43,7 +50,7 @@
             </button>
         </div>
     </nav>
-    <div class="content-wrapper">
+    <div class="content-wrapper" id="main-content">
         <section id="beranda" class="content-section">
             <div class="beranda__text-group">
                 <h1 class="beranda__title">
@@ -103,189 +110,11 @@
         <section id="produk" class="content-section">
             <div class="section-header">
                 <h1 class="section-title">Apa Saja yang Ditawarkan?</h1>
-                <select name="filter-content" id="filter-content">
-                    <option value="all">All</option>
-                    <option value="produk">Produk</option>
-                    <option value="jasa">Jasa</option>
-                </select>
+
+                <a href="product.html" id="lihat-produk">Lihat Semua Produk</a>
             </div>
             <div class="produk__content owl-carousel owl-theme">
-                <div class="produk__box">
-                    <a href="#" class="produk__link"></a>
-                    <div class="produk__box-image">
-                        <img src="./assets/img/produk/canon-650d-18-135mm-stm-review.jpg" alt="Canon 650D 18 0 135mm" loading="lazy">
-                    </div>
-                    <div class="produk__box-body">
-                        <h3 class="produk__title">
-                            Canon 650D 18 0 135mm
-                        </h3>
-                        <div class="produk__body-footer">
-                            <h5 class="produk__price">
-                                Rp. 80,000
-                            </h5>
-                        </div>
-                    </div>
-                    
-                    <button class="add-to-collection">
-                        <svg width="29" height="29" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M12 4.595C10.9104 3.59311 9.48419 3.03705 8.00398 3.037C7.22052 3.03782 6.44496 3.19356 5.72192 3.49527C4.99888 3.79698 4.34265 4.2387 3.79098 4.795C1.43798 7.158 1.43898 10.854 3.79298 13.207L11.125 20.539C11.295 20.838 11.623 21.031 12 21.031C12.1548 21.0295 12.3071 20.9917 12.4446 20.9207C12.5822 20.8496 12.7011 20.7474 12.792 20.622L20.207 13.207C22.561 10.853 22.561 7.158 20.205 4.791C19.6536 4.23572 18.9979 3.7949 18.2756 3.49389C17.5532 3.19287 16.7785 3.0376 15.996 3.037C14.5158 3.03724 13.0897 3.59328 12 4.595V4.595ZM18.791 6.205C20.354 7.776 20.355 10.23 18.793 11.793L12 18.586L5.20698 11.793C3.64498 10.23 3.64598 7.776 5.20498 6.209C5.96498 5.453 6.95898 5.037 8.00398 5.037C9.04898 5.037 10.039 5.453 10.793 6.207L11.293 6.707C11.3858 6.79995 11.496 6.87369 11.6173 6.924C11.7386 6.97431 11.8686 7.0002 12 7.0002C12.1313 7.0002 12.2614 6.97431 12.3827 6.924C12.504 6.87369 12.6142 6.79995 12.707 6.707L13.207 6.207C14.719 4.698 17.281 4.702 18.791 6.205V6.205Z" fill="#d62222"/>
-                        </svg>    
-                    </button>
-                </div>
-                <div class="produk__box">
-                    <a href="#" class="produk__link"></a>
-                    <div class="produk__box-image">
-                        <img src="./assets/img/produk/Canon-EOS-1200D-Harga-canon-eos-1200D.webp" alt="Canon EOS 1200D" loading="lazy">
-                    </div>
-                    <div class="produk__box-body">
-                        <h3 class="produk__title">
-                            Canon EOS 1200D
-                        </h3>
-                        <div class="produk__body-footer">
-                            <h5 class="produk__price">
-                                Rp. 120,000
-                            </h5>
-                        </div>
-                    </div>
-                    
-                    <button class="add-to-collection">
-                        <svg width="29" height="29" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M12 4.595C10.9104 3.59311 9.48419 3.03705 8.00398 3.037C7.22052 3.03782 6.44496 3.19356 5.72192 3.49527C4.99888 3.79698 4.34265 4.2387 3.79098 4.795C1.43798 7.158 1.43898 10.854 3.79298 13.207L11.125 20.539C11.295 20.838 11.623 21.031 12 21.031C12.1548 21.0295 12.3071 20.9917 12.4446 20.9207C12.5822 20.8496 12.7011 20.7474 12.792 20.622L20.207 13.207C22.561 10.853 22.561 7.158 20.205 4.791C19.6536 4.23572 18.9979 3.7949 18.2756 3.49389C17.5532 3.19287 16.7785 3.0376 15.996 3.037C14.5158 3.03724 13.0897 3.59328 12 4.595V4.595ZM18.791 6.205C20.354 7.776 20.355 10.23 18.793 11.793L12 18.586L5.20698 11.793C3.64498 10.23 3.64598 7.776 5.20498 6.209C5.96498 5.453 6.95898 5.037 8.00398 5.037C9.04898 5.037 10.039 5.453 10.793 6.207L11.293 6.707C11.3858 6.79995 11.496 6.87369 11.6173 6.924C11.7386 6.97431 11.8686 7.0002 12 7.0002C12.1313 7.0002 12.2614 6.97431 12.3827 6.924C12.504 6.87369 12.6142 6.79995 12.707 6.707L13.207 6.207C14.719 4.698 17.281 4.702 18.791 6.205V6.205Z" fill="#d62222"/>
-                        </svg>    
-                    </button>
-                </div>
-                <div class="produk__box">
-                    <a href="#" class="produk__link"></a>
-                    <div class="produk__box-image">
-                        <img src="./assets/img/produk/Canon_EOS_1100D_1.jpg.webp" alt="Canon EOS 1100D" loading="lazy">
-                    </div>
-                    <div class="produk__box-body">
-                        <h3 class="produk__title">
-                            Canon EOS 1100D
-                        </h3>
-                        <div class="produk__body-footer">
-                            <h5 class="produk__price">
-                                Rp. 100,000
-                            </h5>
-                        </div>
-                    </div>
-                    
-                    <button class="add-to-collection">
-                        <svg width="29" height="29" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M12 4.595C10.9104 3.59311 9.48419 3.03705 8.00398 3.037C7.22052 3.03782 6.44496 3.19356 5.72192 3.49527C4.99888 3.79698 4.34265 4.2387 3.79098 4.795C1.43798 7.158 1.43898 10.854 3.79298 13.207L11.125 20.539C11.295 20.838 11.623 21.031 12 21.031C12.1548 21.0295 12.3071 20.9917 12.4446 20.9207C12.5822 20.8496 12.7011 20.7474 12.792 20.622L20.207 13.207C22.561 10.853 22.561 7.158 20.205 4.791C19.6536 4.23572 18.9979 3.7949 18.2756 3.49389C17.5532 3.19287 16.7785 3.0376 15.996 3.037C14.5158 3.03724 13.0897 3.59328 12 4.595V4.595ZM18.791 6.205C20.354 7.776 20.355 10.23 18.793 11.793L12 18.586L5.20698 11.793C3.64498 10.23 3.64598 7.776 5.20498 6.209C5.96498 5.453 6.95898 5.037 8.00398 5.037C9.04898 5.037 10.039 5.453 10.793 6.207L11.293 6.707C11.3858 6.79995 11.496 6.87369 11.6173 6.924C11.7386 6.97431 11.8686 7.0002 12 7.0002C12.1313 7.0002 12.2614 6.97431 12.3827 6.924C12.504 6.87369 12.6142 6.79995 12.707 6.707L13.207 6.207C14.719 4.698 17.281 4.702 18.791 6.205V6.205Z" fill="#d62222"/>
-                        </svg>    
-                    </button>
-                </div>
-                <div class="produk__box">
-                    <a href="#" class="produk__link"></a>
-                    <div class="produk__box-image">
-                        <img src="./assets/img/produk/nikon_d7200_bo-600x666.jpg" alt="Nikon D7200" loading="lazy">
-                    </div>
-                    <div class="produk__box-body">
-                        <h3 class="produk__title">
-                            Nikon D7200
-                        </h3>
-                        <div class="produk__body-footer">
-                            <h5 class="produk__price">
-                                Rp. 60,000
-                            </h5>
-                        </div>
-                    </div>
-                    
-                    <button class="add-to-collection">
-                        <svg width="29" height="29" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M12 4.595C10.9104 3.59311 9.48419 3.03705 8.00398 3.037C7.22052 3.03782 6.44496 3.19356 5.72192 3.49527C4.99888 3.79698 4.34265 4.2387 3.79098 4.795C1.43798 7.158 1.43898 10.854 3.79298 13.207L11.125 20.539C11.295 20.838 11.623 21.031 12 21.031C12.1548 21.0295 12.3071 20.9917 12.4446 20.9207C12.5822 20.8496 12.7011 20.7474 12.792 20.622L20.207 13.207C22.561 10.853 22.561 7.158 20.205 4.791C19.6536 4.23572 18.9979 3.7949 18.2756 3.49389C17.5532 3.19287 16.7785 3.0376 15.996 3.037C14.5158 3.03724 13.0897 3.59328 12 4.595V4.595ZM18.791 6.205C20.354 7.776 20.355 10.23 18.793 11.793L12 18.586L5.20698 11.793C3.64498 10.23 3.64598 7.776 5.20498 6.209C5.96498 5.453 6.95898 5.037 8.00398 5.037C9.04898 5.037 10.039 5.453 10.793 6.207L11.293 6.707C11.3858 6.79995 11.496 6.87369 11.6173 6.924C11.7386 6.97431 11.8686 7.0002 12 7.0002C12.1313 7.0002 12.2614 6.97431 12.3827 6.924C12.504 6.87369 12.6142 6.79995 12.707 6.707L13.207 6.207C14.719 4.698 17.281 4.702 18.791 6.205V6.205Z" fill="#d62222"/>
-                        </svg>    
-                    </button>
-                </div>
-                <div class="produk__box">
-                    <a href="#" class="produk__link"></a>
-                    <div class="produk__box-image">
-                        <img src="./assets/img/produk/canon-eos-5d.jfif" alt="Canon EOS 5D" loading="lazy">
-                    </div>
-                    <div class="produk__box-body">
-                        <h3 class="produk__title">
-                            Canon EOS 5D
-                        </h3>
-                        <div class="produk__body-footer">
-                            <h5 class="produk__price">
-                                Rp. 50,000
-                            </h5>
-                        </div>
-                    </div>
-                    
-                    <button class="add-to-collection">
-                        <svg width="29" height="29" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M12 4.595C10.9104 3.59311 9.48419 3.03705 8.00398 3.037C7.22052 3.03782 6.44496 3.19356 5.72192 3.49527C4.99888 3.79698 4.34265 4.2387 3.79098 4.795C1.43798 7.158 1.43898 10.854 3.79298 13.207L11.125 20.539C11.295 20.838 11.623 21.031 12 21.031C12.1548 21.0295 12.3071 20.9917 12.4446 20.9207C12.5822 20.8496 12.7011 20.7474 12.792 20.622L20.207 13.207C22.561 10.853 22.561 7.158 20.205 4.791C19.6536 4.23572 18.9979 3.7949 18.2756 3.49389C17.5532 3.19287 16.7785 3.0376 15.996 3.037C14.5158 3.03724 13.0897 3.59328 12 4.595V4.595ZM18.791 6.205C20.354 7.776 20.355 10.23 18.793 11.793L12 18.586L5.20698 11.793C3.64498 10.23 3.64598 7.776 5.20498 6.209C5.96498 5.453 6.95898 5.037 8.00398 5.037C9.04898 5.037 10.039 5.453 10.793 6.207L11.293 6.707C11.3858 6.79995 11.496 6.87369 11.6173 6.924C11.7386 6.97431 11.8686 7.0002 12 7.0002C12.1313 7.0002 12.2614 6.97431 12.3827 6.924C12.504 6.87369 12.6142 6.79995 12.707 6.707L13.207 6.207C14.719 4.698 17.281 4.702 18.791 6.205V6.205Z" fill="#d62222"/>
-                        </svg>    
-                    </button>
-                </div>
-                <div class="produk__box">
-                    <a href="#" class="produk__link"></a>
-                    <div class="produk__box-image">
-                        <img src="./assets/img/produk/canon-eos-600d.jpg" alt="Canon EOS 600D" loading="lazy">
-                    </div>
-                    <div class="produk__box-body">
-                        <h3 class="produk__title">
-                            Canon EOS 600D
-                        </h3>
-                        <div class="produk__body-footer">
-                            <h5 class="produk__price">
-                                Rp. 75,000
-                            </h5>
-                        </div>
-                    </div>
-                    
-                    <button class="add-to-collection">
-                        <svg width="29" height="29" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M12 4.595C10.9104 3.59311 9.48419 3.03705 8.00398 3.037C7.22052 3.03782 6.44496 3.19356 5.72192 3.49527C4.99888 3.79698 4.34265 4.2387 3.79098 4.795C1.43798 7.158 1.43898 10.854 3.79298 13.207L11.125 20.539C11.295 20.838 11.623 21.031 12 21.031C12.1548 21.0295 12.3071 20.9917 12.4446 20.9207C12.5822 20.8496 12.7011 20.7474 12.792 20.622L20.207 13.207C22.561 10.853 22.561 7.158 20.205 4.791C19.6536 4.23572 18.9979 3.7949 18.2756 3.49389C17.5532 3.19287 16.7785 3.0376 15.996 3.037C14.5158 3.03724 13.0897 3.59328 12 4.595V4.595ZM18.791 6.205C20.354 7.776 20.355 10.23 18.793 11.793L12 18.586L5.20698 11.793C3.64498 10.23 3.64598 7.776 5.20498 6.209C5.96498 5.453 6.95898 5.037 8.00398 5.037C9.04898 5.037 10.039 5.453 10.793 6.207L11.293 6.707C11.3858 6.79995 11.496 6.87369 11.6173 6.924C11.7386 6.97431 11.8686 7.0002 12 7.0002C12.1313 7.0002 12.2614 6.97431 12.3827 6.924C12.504 6.87369 12.6142 6.79995 12.707 6.707L13.207 6.207C14.719 4.698 17.281 4.702 18.791 6.205V6.205Z" fill="#d62222"/>
-                        </svg>    
-                    </button>
-                </div>
-                <div class="produk__box">
-                    <a href="#" class="produk__link"></a>
-                    <div class="produk__box-image">
-                        <img src="./assets/img/produk/canon-eos-60d.jpg" alt="Canon EOS 60D" loading="lazy">
-                    </div>
-                    <div class="produk__box-body">
-                        <h3 class="produk__title">
-                            Canon EOS 60D
-                        </h3>
-                        <div class="produk__body-footer">
-                            <h5 class="produk__price">
-                                Rp. 65,000
-                            </h5>
-                        </div>
-                    </div>
-                    
-                    <button class="add-to-collection">
-                        <svg width="29" height="29" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M12 4.595C10.9104 3.59311 9.48419 3.03705 8.00398 3.037C7.22052 3.03782 6.44496 3.19356 5.72192 3.49527C4.99888 3.79698 4.34265 4.2387 3.79098 4.795C1.43798 7.158 1.43898 10.854 3.79298 13.207L11.125 20.539C11.295 20.838 11.623 21.031 12 21.031C12.1548 21.0295 12.3071 20.9917 12.4446 20.9207C12.5822 20.8496 12.7011 20.7474 12.792 20.622L20.207 13.207C22.561 10.853 22.561 7.158 20.205 4.791C19.6536 4.23572 18.9979 3.7949 18.2756 3.49389C17.5532 3.19287 16.7785 3.0376 15.996 3.037C14.5158 3.03724 13.0897 3.59328 12 4.595V4.595ZM18.791 6.205C20.354 7.776 20.355 10.23 18.793 11.793L12 18.586L5.20698 11.793C3.64498 10.23 3.64598 7.776 5.20498 6.209C5.96498 5.453 6.95898 5.037 8.00398 5.037C9.04898 5.037 10.039 5.453 10.793 6.207L11.293 6.707C11.3858 6.79995 11.496 6.87369 11.6173 6.924C11.7386 6.97431 11.8686 7.0002 12 7.0002C12.1313 7.0002 12.2614 6.97431 12.3827 6.924C12.504 6.87369 12.6142 6.79995 12.707 6.707L13.207 6.207C14.719 4.698 17.281 4.702 18.791 6.205V6.205Z" fill="#d62222"/>
-                        </svg>    
-                    </button>
-                </div>
-                <div class="produk__box">
-                    <a href="#" class="produk__link"></a>
-                    <div class="produk__box-image">
-                        <img src="./assets/img/produk/canon-eos-70d.jpg" alt="Canon EOS 70D" loading="lazy">
-                    </div>
-                    <div class="produk__box-body">
-                        <h3 class="produk__title">
-                            Canon EOS 70D
-                        </h3>
-                        <div class="produk__body-footer">
-                            <h5 class="produk__price">
-                                Rp. 88,000
-                            </h5>
-                        </div>
-                    </div>
-                    
-                    <button class="add-to-collection">
-                        <svg width="29" height="29" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M12 4.595C10.9104 3.59311 9.48419 3.03705 8.00398 3.037C7.22052 3.03782 6.44496 3.19356 5.72192 3.49527C4.99888 3.79698 4.34265 4.2387 3.79098 4.795C1.43798 7.158 1.43898 10.854 3.79298 13.207L11.125 20.539C11.295 20.838 11.623 21.031 12 21.031C12.1548 21.0295 12.3071 20.9917 12.4446 20.9207C12.5822 20.8496 12.7011 20.7474 12.792 20.622L20.207 13.207C22.561 10.853 22.561 7.158 20.205 4.791C19.6536 4.23572 18.9979 3.7949 18.2756 3.49389C17.5532 3.19287 16.7785 3.0376 15.996 3.037C14.5158 3.03724 13.0897 3.59328 12 4.595V4.595ZM18.791 6.205C20.354 7.776 20.355 10.23 18.793 11.793L12 18.586L5.20698 11.793C3.64498 10.23 3.64598 7.776 5.20498 6.209C5.96498 5.453 6.95898 5.037 8.00398 5.037C9.04898 5.037 10.039 5.453 10.793 6.207L11.293 6.707C11.3858 6.79995 11.496 6.87369 11.6173 6.924C11.7386 6.97431 11.8686 7.0002 12 7.0002C12.1313 7.0002 12.2614 6.97431 12.3827 6.924C12.504 6.87369 12.6142 6.79995 12.707 6.707L13.207 6.207C14.719 4.698 17.281 4.702 18.791 6.205V6.205Z" fill="#d62222"/>
-                        </svg>    
-                    </button>
-                </div>
+                
             </div>
         </section>
 
@@ -362,5 +191,6 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js" integrity="sha512-aVKKRRi/Q/YV+4mjoKBsE4x3H+BkegoM/em46NNlCqNTmUYADjBbeNefNxYV7giUp0VxICtqdrbqU7iVaeZNXA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="./assets/owlCarousel/owl.carousel.min.js"></script>
     <script src="./assets/style/script.js"></script>
+    <script src="./assets/style/data.js"></script>
 </body>
 </html>
