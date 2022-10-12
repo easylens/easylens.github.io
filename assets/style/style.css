@@ -1335,6 +1335,10 @@ body::-webkit-scrollbar-thumb:hover{
     .produk-page__box{
         width: 32%;
     }
+
+    #filter-content{
+        width: 230px;
+    }
 }
 
 @media(max-width:1050px){
@@ -1588,6 +1592,16 @@ body::-webkit-scrollbar-thumb:hover{
         -moz-transform: translateY(0);
         -ms-transform: translateY(0);
         -o-transform: translateY(0);
+    }
+    
+    .produk-page__header{
+        flex-direction:column ;
+        gap: 10px;
+    }
+
+    .produk-page__header .content-title{
+        font-size: 24px;
+        text-align: center;
     }
 }
 
