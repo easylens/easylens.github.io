@@ -502,21 +502,76 @@ body::-webkit-scrollbar-thumb:hover{
     gap: 15px;
 }
 
+#produk-page{
+    padding-top: 100px;
+}
+
+.produk-page__header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 25px;
+}
+
+.produk-page__header .content-title{
+    font-size: var(--fs-title);
+    font-weight: var(--bold);
+    text-transform: capitalize;
+}
+
+#filter-content{
+    background: url("data:image/svg+xml,<svg height='10px' width='10px' viewBox='0 0 16 16' fill='%23000000' xmlns='http://www.w3.org/2000/svg'><path d='M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z'/></svg>") no-repeat;
+    background-position: calc(100% - 0.75rem) center !important;
+    -moz-appearance:none !important;
+    -webkit-appearance: none !important; 
+    appearance: none !important;
+    padding-right: 2rem !important;
+    width: 17.5%;
+    height: 35px;
+    padding-left: 20px;
+    font-family: var(--font-body);
+    background-color: #fff;
+    border-color: transparent;
+    font-weight: var(--semibold);
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+    transition: all .15s linear;
+    -webkit-transition: all .15s linear;
+    -moz-transition: all .15s linear;
+    -ms-transition: all .15s linear;
+    -o-transition: all .15s linear;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+#filter-content:focus{
+    border-color: var(--primary);
+}
+
+#filter-content option{
+    font-weight: var(--semibold);
+}
+
 .produk-page__content{
     display: flex;
     gap: 15px;
     flex-wrap: wrap;
-    align-items: stretch;
-    padding-top: 100px;
     padding-bottom: 30px;
+    align-items: stretch;
+}
+
+.produk-page__box[data-product-show=show]{
+    display: flex;
 }
 
 .produk-page__box{
     background-color: #fff;
     border: 1px solid rgba(0, 0, 0, 0.1);
     overflow: hidden;
-    width: 23.5%;
-    display: flex;
+    width: 24.1%;
+    display: none;
     position: relative;
     flex-direction: column;
     justify-content: space-between;
@@ -736,10 +791,6 @@ body::-webkit-scrollbar-thumb:hover{
 }
 
 /* Cara Pemesanan Section */
-
-#cara-pemesanan{
-    padding-bottom: 45px;
-}
 
 .order__content{
     display: flex;
@@ -1118,6 +1169,164 @@ body::-webkit-scrollbar-thumb:hover{
 }
 }
 
+#galeri{
+    padding-bottom: 70px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.galeri__content{
+    display: flex;
+    align-items: stretch;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 40px;
+}
+
+.galeri__box{
+    width: 250px;
+    height: 250px;
+    cursor: zoom-in;
+}
+
+.galeri__box img{
+    width: 100%;
+    object-fit: cover;
+    opacity: 0;
+    visibility: hidden;
+    object-position: center;
+    filter: grayscale(0.7);
+    -webkit-filter: grayscale(0.7);
+    transition: all .15s linear;
+    -webkit-transition: all .15s linear;
+    -moz-transition: all .15s linear;
+    -ms-transition: all .15s linear;
+    -o-transition: all .15s linear;
+}
+
+.galeri__box img[data-scroll=show]{
+    opacity: 1;
+    visibility: visible;
+}
+
+.galeri__box:hover img{
+    filter: grayscale(0);
+    -webkit-filter: grayscale(0);
+}
+
+.to-galeri{
+    background-color: transparent;
+    color: var(--primary);
+    font-weight: var(--bold);
+    border: 1px solid var(--primary);
+    font-family: var(--font-body);
+    height: 40px;
+    padding: 20px 30px;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+}
+
+.to-galeri:hover{
+    background-color: var(--primary);
+    color: var(--background);
+}
+
+.lightbox{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: 90;
+    visibility: hidden;
+    opacity: 0;
+    transition: all .15s ease-in-out;
+    -webkit-transition: all .15s ease-in-out;
+    -moz-transition: all .15s ease-in-out;
+    -ms-transition: all .15s ease-in-out;
+    -o-transition: all .15s ease-in-out;
+}
+
+.lightbox.open{
+    visibility: visible;
+    opacity: 1;
+}
+
+.lightbox-overlay{
+    background-color: rgba(0, 0, 0, 0.75);
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: 91;
+}
+
+.lightbox-content{
+    position: absolute;
+    border-radius: 10px;
+    z-index: 92;
+    top: 50%;
+    left: 50%;
+    display: flex;
+    max-width: 95vw;
+    overflow-x: auto;
+    gap: 15px;
+    transform: translate(-50%, -55%);
+    -webkit-transform: translate(-50%, -55%);
+    -moz-transform: translate(-50%, -55%);
+    -ms-transform: translate(-50%, -55%);
+    -o-transform: translate(-50%, -55%);
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+}
+
+.lightbox-content::-webkit-scrollbar{
+    height: 7px;
+}
+
+.lightbox-content::-webkit-scrollbar-track{
+    background-color: var(--background);
+}
+.lightbox-content::-webkit-scrollbar-thumb{
+    background-color: var(--primary);
+}
+
+.lightbox-content img{
+    height: 0;
+    transition: all .15s linear;
+    -webkit-transition: all .15s linear;
+    -moz-transition: all .15s linear;
+    -ms-transition: all .15s linear;
+    -o-transition: all .15s linear;
+}
+
+.lightbox-content.open img{
+    height: 80vh;
+}
+
+.close-lightbox{
+    position: absolute;
+    z-index: 95;
+    bottom: 45px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 10px;
+    background-color: transparent;
+    color: var(--background);
+    line-height: var(--fs-hero-title);
+    font-family: var(--font-body);
+    font-size: var(--fs-footer-title);
+    -webkit-transform: translateX(-50%);
+    -moz-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    -o-transform: translateX(-50%);
+}
+
 @media(max-width:1400px){
     .content-wrapper{
         width: 80vw;
@@ -1397,6 +1606,11 @@ body::-webkit-scrollbar-thumb:hover{
 
     .detail-produk__image{
         height: 200px;
+    }
+
+    .galeri__box{
+        width: 150px;
+        height: 150px;
     }
 }
 

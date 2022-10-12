@@ -1,307 +1,704 @@
-$(document).ready(function(){
-
-    $(".menu-button").click(function(e){
-        e.preventDefault();
-
-        $(".navbar ul").toggleClass("show");
-
-        setTimeout(() => {
-            if ($(".navbar ul").hasClass("show")) {
-                $(".navbar-overlay").addClass("show")
-            }else{   
-                $(".navbar-overlay").removeClass("show")
-            }
-        }, 50);
-    })
-});
-
-$(window).on('load', function(){
-    doShowLoad();
-    setTimeout(() => {
-        doShowContent();
-
-        setTimeout(() => {
-            doCloseLoad();
-        }, 750);
-    }, 250);
-});
-
 var cameraData = [
-        {   
-            "id" : 1,
-            "name" : "Canon EOS 1100D + Lensa Kit",
-            "description" : "Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur nihil explicabo animi nisi labore recusandae aspernatur ad qui magni modi tempore natus minus veritatis accusamus itaque excepturi cumque, reiciendis rerum!",
-            "image" : "Canon_EOS_1100D_1.jpg.webp",
-            "price" : {
-                "lite" : 60000,
-                "medium" : 100000,
-                "large" : 140000,
-            },
+    {   
+        "id" : 1,
+        "name" : "Canon EOS 1100D + Lensa Kit",
+        "category" : "camera",
+        "description" : "Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur nihil explicabo animi nisi labore recusandae aspernatur ad qui magni modi tempore natus minus veritatis accusamus itaque excepturi cumque, reiciendis rerum!",
+        "image" : "Canon_EOS_1100D_1.jpg.webp",
+        "price" : {
+            "lite" : 60000,
+            "medium" : 100000,
+            "large" : 140000,
         },
-        {
-            "id" : 2,
-            "name" : "Canon EOS 1200D + Lensa Kit",
-            "description" : "Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur nihil explicabo animi nisi labore recusandae aspernatur ad qui magni modi tempore natus minus veritatis accusamus itaque excepturi cumque, reiciendis rerum!",
-            "image" : "Canon-EOS-1200D-Harga-canon-eos-1200D.webp",
-            "price" : {
-                "lite" : 70000,
-                "medium" : 110000,
-                "large" : 150000,
-            },
+    },
+    {
+        "id" : 2,
+        "name" : "Canon EOS 1200D + Lensa Kit",
+        "category" : "camera",
+        "description" : "Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur nihil explicabo animi nisi labore recusandae aspernatur ad qui magni modi tempore natus minus veritatis accusamus itaque excepturi cumque, reiciendis rerum!",
+        "image" : "Canon-EOS-1200D-Harga-canon-eos-1200D.webp",
+        "price" : {
+            "lite" : 70000,
+            "medium" : 110000,
+            "large" : 150000,
         },
-        {
-            "id" : 3,
-            "name" : "Canon EOS 600D + Lensa Kit",
-            "description" : "Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur nihil explicabo animi nisi labore recusandae aspernatur ad qui magni modi tempore natus minus veritatis accusamus itaque excepturi cumque, reiciendis rerum!",
-            "image" : "canon-eos-600d.jpg",
-            "price" : {
-                "lite" : 80000,
-                "medium" : 120000,
-                "large" : 160000,
-            },
+    },
+    {
+        "id" : 3,
+        "name" : "Canon EOS 600D + Lensa Kit",
+        "category" : "camera",
+        "description" : "Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur nihil explicabo animi nisi labore recusandae aspernatur ad qui magni modi tempore natus minus veritatis accusamus itaque excepturi cumque, reiciendis rerum!",
+        "image" : "canon-eos-600d.jpg",
+        "price" : {
+            "lite" : 80000,
+            "medium" : 120000,
+            "large" : 160000,
         },
-        {
-            "id" : 4,
-            "name" : "Canon EOS 650D + Lensa Kit",
-            "description" : "Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur nihil explicabo animi nisi labore recusandae aspernatur ad qui magni modi tempore natus minus veritatis accusamus itaque excepturi cumque, reiciendis rerum!",
-            "image" : "canon-650d-18-135mm-stm-review.jpg",
-            "price" : {
-                "lite" : 85000,
-                "medium" : 125000,
-                "large" : 165000,
-            },
+    },
+    {
+        "id" : 4,
+        "name" : "Canon EOS 650D + Lensa Kit",
+        "category" : "camera",
+        "description" : "Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur nihil explicabo animi nisi labore recusandae aspernatur ad qui magni modi tempore natus minus veritatis accusamus itaque excepturi cumque, reiciendis rerum!",
+        "image" : "canon-650d-18-135mm-stm-review.jpg",
+        "price" : {
+            "lite" : 85000,
+            "medium" : 125000,
+            "large" : 165000,
         },
-        {
-            "id" : 5,
-            "name" : "Canon EOS 60D + Lensa Kit",
-            "description" : "Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur nihil explicabo animi nisi labore recusandae aspernatur ad qui magni modi tempore natus minus veritatis accusamus itaque excepturi cumque, reiciendis rerum!",
-            "image" : "canon-eos-60d.jpg",
-            "price" : {
-                "lite" : 90000,
-                "medium" : 130000,
-                "large" : 170000,
-            },
+    },
+    {
+        "id" : 5,
+        "name" : "Canon EOS 60D + Lensa Kit",
+        "category" : "camera",
+        "description" : "Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur nihil explicabo animi nisi labore recusandae aspernatur ad qui magni modi tempore natus minus veritatis accusamus itaque excepturi cumque, reiciendis rerum!",
+        "image" : "canon-eos-60d.jpg",
+        "price" : {
+            "lite" : 90000,
+            "medium" : 130000,
+            "large" : 170000,
         },
-        {
-            "id" : 6,
-            "name" : "Canon EOS 7D + Lensa Kit",
-            "description" : "Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur nihil explicabo animi nisi labore recusandae aspernatur ad qui magni modi tempore natus minus veritatis accusamus itaque excepturi cumque, reiciendis rerum!",
-            "image" : "canon-eos-70d.jpg",
-            "price" : {
-                "lite" : 100000,
-                "medium" : 140000,
-                "large" : 180000,
-            },
+    },
+    {
+        "id" : 6,
+        "name" : "Canon EOS 7D + Lensa Kit",
+        "category" : "camera",
+        "description" : "Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur nihil explicabo animi nisi labore recusandae aspernatur ad qui magni modi tempore natus minus veritatis accusamus itaque excepturi cumque, reiciendis rerum!",
+        "image" : "canon-eos-70d.jpg",
+        "price" : {
+            "lite" : 100000,
+            "medium" : 140000,
+            "large" : 180000,
         },
-        {
-            "id" : 7,
-            "name" : "Go Pro Hero 3",
-            "description" : "Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur nihil explicabo animi nisi labore recusandae aspernatur ad qui magni modi tempore natus minus veritatis accusamus itaque excepturi cumque, reiciendis rerum!",
-            "image" : "go-pro-hero-3.webp",
-            "price" : {
-                "lite" : "",
-                "medium" : 90000,
-                "large" : 110000,
-            },
+    },
+    {
+        "id" : 7,
+        "name" : "Go Pro Hero 3",
+        "category" : "camera",
+        "description" : "Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur nihil explicabo animi nisi labore recusandae aspernatur ad qui magni modi tempore natus minus veritatis accusamus itaque excepturi cumque, reiciendis rerum!",
+        "image" : "go-pro-hero-3.webp",
+        "price" : {
+            "lite" : "",
+            "medium" : 90000,
+            "large" : 110000,
         },
-        {
-            "id" : 8,
-            "name" : "Panasonic MDH2GC",
-            "description" : "Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur nihil explicabo animi nisi labore recusandae aspernatur ad qui magni modi tempore natus minus veritatis accusamus itaque excepturi cumque, reiciendis rerum!",
-            "image" : "panasonic-mdh2gc.png",
-            "price" : {
-                "lite" : "",
-                "medium" : "",
-                "large" : 410000,
-            },
+    },
+    {
+        "id" : 8,
+        "name" : "Panasonic MDH2GC",
+        "category" : "camera",
+        "description" : "Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur nihil explicabo animi nisi labore recusandae aspernatur ad qui magni modi tempore natus minus veritatis accusamus itaque excepturi cumque, reiciendis rerum!",
+        "image" : "panasonic-mdh2gc.png",
+        "price" : {
+            "lite" : "",
+            "medium" : "",
+            "large" : 410000,
         },
-        // {
-            // "id" : 9,
-        //     "name" : "Nikon D7200",
-        //     "description" : "Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur nihil explicabo animi nisi labore recusandae aspernatur ad qui magni modi tempore natus minus veritatis accusamus itaque excepturi cumque, reiciendis rerum!",
-        //     "image" : "nikon_d7200_bo-600x666.jpg",
-        //     "price" : {
-        //         "lite" : 75000,
-        //         "medium" : 115000,
-        //         "big" : 155000,
-        //     },
-        // },
+    },
+    {
+        "id" : 9,
+        "name" : "Nikon D7200",
+        "category" : "camera",
+        "description" : "Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur nihil explicabo animi nisi labore recusandae aspernatur ad qui magni modi tempore natus minus veritatis accusamus itaque excepturi cumque, reiciendis rerum!",
+        "image" : "nikon_d7200_bo-600x666.jpg",
+        "price" : {
+            "lite" : 75000,
+            "medium" : 115000,
+            "big" : 155000,
+        },
+    },
 ];
 
+var lensaData = [
+    {   
+        "id" : 10,
+        "name" : "Lensa Canon KIT 18-55 MM",
+        "category" : "lensa",
+        "description" : "Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur nihil explicabo animi nisi labore recusandae aspernatur ad qui magni modi tempore natus minus veritatis accusamus itaque excepturi cumque, reiciendis rerum!",
+        "image" : "lensa-canon-kit-18-55-MM.jpg",
+        "price" : {
+            "lite" : "",
+            "medium" : 30000,
+            "large" : 40000,
+        },
+    },
+    {   
+        "id" : 11,
+        "name" : "Lensa Canon KIT 18-55 IS STM",
+        "category" : "lensa",
+        "description" : "Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur nihil explicabo animi nisi labore recusandae aspernatur ad qui magni modi tempore natus minus veritatis accusamus itaque excepturi cumque, reiciendis rerum!",
+        "image" : "lensa-canon-kit-18-55-STM.jpg",
+        "price" : {
+            "lite" : "",
+            "medium" : 40000,
+            "large" : 45000,
+        },
+    },
+    {   
+        "id" : 12,
+        "name" : "Lensa Canon EFS 18-135 MM IS",
+        "category" : "lensa",
+        "description" : "Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur nihil explicabo animi nisi labore recusandae aspernatur ad qui magni modi tempore natus minus veritatis accusamus itaque excepturi cumque, reiciendis rerum!",
+        "image" : "lensa-canon-EFS-18-135.jpg",
+        "price" : {
+            "lite" : "",
+            "medium" : 50000,
+            "large" : 60000,
+        },
+    },
+    {   
+        "id" : 13,
+        "name" : "Lensa Canon EFS 17-85 MM IS USM",
+        "category" : "lensa",
+        "description" : "Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur nihil explicabo animi nisi labore recusandae aspernatur ad qui magni modi tempore natus minus veritatis accusamus itaque excepturi cumque, reiciendis rerum!",
+        "image" : "lensa-EFS-17-85.jpg",
+        "price" : {
+            "lite" : "",
+            "medium" : 60000,
+            "large" : 80000,
+        },
+    },
+    {   
+        "id" : 14,
+        "name" : "Lensa Canon FIX 24 MM f/2.8 STM",
+        "category" : "lensa",
+        "description" : "Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur nihil explicabo animi nisi labore recusandae aspernatur ad qui magni modi tempore natus minus veritatis accusamus itaque excepturi cumque, reiciendis rerum!",
+        "image" : "lensa-fix-24.jpg",
+        "price" : {
+            "lite" : "",
+            "medium" : 50000,
+            "large" : 60000,
+        },
+    },
+    {   
+        "id" : 15,
+        "name" : "Lensa Canon FIX 35 MM f/2",
+        "category" : "lensa",
+        "description" : "Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur nihil explicabo animi nisi labore recusandae aspernatur ad qui magni modi tempore natus minus veritatis accusamus itaque excepturi cumque, reiciendis rerum!",
+        "image" : "lensa-fix-35.jpg",
+        "price" : {
+            "lite" : "",
+            "medium" : 60000,
+            "large" : 80000,
+        },
+    },
+    {   
+        "id" : 16,
+        "name" : "Lensa Canon FIX 50 MM f/1.8 (BOKEH)",
+        "category" : "lensa",
+        "description" : "Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur nihil explicabo animi nisi labore recusandae aspernatur ad qui magni modi tempore natus minus veritatis accusamus itaque excepturi cumque, reiciendis rerum!",
+        "image" : "lensa-fix-50.jpg",
+        "price" : {
+            "lite" : "",
+            "medium" : 50000,
+            "large" : 60000,
+        },
+    },
+    {   
+        "id" : 17,
+        "name" : "Lensa SAMYANG FishEyes 8MM",
+        "category" : "lensa",
+        "description" : "Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur nihil explicabo animi nisi labore recusandae aspernatur ad qui magni modi tempore natus minus veritatis accusamus itaque excepturi cumque, reiciendis rerum!",
+        "image" : "lensa-samyang-fish-eye.jpg",
+        "price" : {
+            "lite" : "",
+            "medium" : 50000,
+            "large" : 60000,
+        },
+    },
+    {   
+        "id" : 18,
+        "name" : "Lensa SIGMA Tele 70-300 MM f/4-5.6",
+        "category" : "lensa",
+        "description" : "Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur nihil explicabo animi nisi labore recusandae aspernatur ad qui magni modi tempore natus minus veritatis accusamus itaque excepturi cumque, reiciendis rerum!",
+        "image" : "lensa-tele-sigma-70-300.jpg",
+        "price" : {
+            "lite" : "",
+            "medium" : 110000,
+            "large" : 160000,
+        },
+    },
+    {   
+        "id" : 19,
+        "name" : "Lensa Canon Tele 55-250 MM f/4-5.6 IS II",
+        "category" : "lensa",
+        "description" : "Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur nihil explicabo animi nisi labore recusandae aspernatur ad qui magni modi tempore natus minus veritatis accusamus itaque excepturi cumque, reiciendis rerum!",
+        "image" : "lensa-canon-tele-55-250.jpg",
+        "price" : {
+            "lite" : "",
+            "medium" : 100000,
+            "large" : 130000,
+        },
+    },
+    {   
+        "id" : 20,
+        "name" : "Lensa Canon Tele 70-200 MM f/2.8 L Series",
+        "category" : "lensa",
+        "description" : "Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur nihil explicabo animi nisi labore recusandae aspernatur ad qui magni modi tempore natus minus veritatis accusamus itaque excepturi cumque, reiciendis rerum!",
+        "image" : "lensa-tele-canon-70-200.jpg",
+        "price" : {
+            "lite" : "",
+            "medium" : 160000,
+            "large" : 210000,
+        },
+    },
+];
 
-function getSomeCameraData(){
-    
-    for (let i = 0; i < 6; i++) {
-        let data = cameraData[i];
-        let id = data.id;
-        let name = data.name;
-        let imageName = data.image;
-        let price = data.price;
-        let litePrice = price.lite;
-        let mediumPrice = price.medium;
-        let largePrice = price.large;
-        let displayNumberFormat;
+var ledData = [
+    {   
+        "id" : 21,
+        "name" : "LED Godox P120C + Battery",
+        "category" : "led",
+        "description" : "Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur nihil explicabo animi nisi labore recusandae aspernatur ad qui magni modi tempore natus minus veritatis accusamus itaque excepturi cumque, reiciendis rerum!",
+        "image" : "LED-Godox-P120C-battery.jpg",
+        "price" : {
+            "lite" : "",
+            "medium" : "",
+            "large" : 60000,
+        },
+    },
+    {   
+        "id" : 22,
+        "name" : "LED Lampu Tembak 50 Watt",
+        "category" : "led",
+        "description" : "Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur nihil explicabo animi nisi labore recusandae aspernatur ad qui magni modi tempore natus minus veritatis accusamus itaque excepturi cumque, reiciendis rerum!",
+        "image" : "LED-lampu-tembak-50-watt.jpeg",
+        "price" : {
+            "lite" : "",
+            "medium" : "",
+            "large" : 60000,
+        },
+    },
+    {   
+        "id" : 23,
+        "name" : "LED Lampu Tembak 100 Watt",
+        "category" : "led",
+        "description" : "Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur nihil explicabo animi nisi labore recusandae aspernatur ad qui magni modi tempore natus minus veritatis accusamus itaque excepturi cumque, reiciendis rerum!",
+        "image" : "LED-lampu-tembak-100-watt.jpeg",
+        "price" : {
+            "lite" : "",
+            "medium" : "",
+            "large" : 80000,
+        },
+    },
+]
 
-        if (litePrice == "") {
-            if (mediumPrice == "") {
-                displayNumberFormat =  numberFormat(largePrice)
-            } else {
-                displayNumberFormat =  numberFormat(mediumPrice)
-            }
-        } else {
-            displayNumberFormat =  numberFormat(litePrice)
-        }
-        
-        let productBoxHtml = '<a href="detail-product.html?product='+ id +'" class="produk__box">'+ 
-            '                    <div class="produk__box-image">'+
-            '                        <img src="./assets/img/produk/'+ imageName +'" alt="'+ name +'" loading="lazy">'+
-            '                    </div>'+
-            '                    <div class="produk__box-body">'+
-            '                        <h3 class="produk__title">' + name +
-            '                        </h3>'+
-            '                        <div class="produk__body-footer">'+
-            '                            <h5 class="produk__price">'+
-            '                                Rp. '+ displayNumberFormat +
-            '                            </h5>'+
-            '                        </div>'+
-            '                    </div>'+
-            '                </a>';
+var audioMicData = [
+    {   
+        "id" : 24,
+        "name" : "MIC BOYA Shotgun BY-MM1",
+        "category" : "audio-mic",
+        "description" : "Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur nihil explicabo animi nisi labore recusandae aspernatur ad qui magni modi tempore natus minus veritatis accusamus itaque excepturi cumque, reiciendis rerum!",
+        "image" : "MIC-BOYA-Shotgun-BY-MM1.jpeg",
+        "price" : {
+            "lite" : "",
+            "medium" : "",
+            "large" : 60000,
+        },
+    },
+    {   
+        "id" : 25,
+        "name" : "MIC Clip On BY-M1DM",
+        "category" : "audio-mic",
+        "description" : "Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur nihil explicabo animi nisi labore recusandae aspernatur ad qui magni modi tempore natus minus veritatis accusamus itaque excepturi cumque, reiciendis rerum!",
+        "image" : "MIC-BOYA-Clip-on-BY-M1DM.jpeg",
+        "price" : {
+            "lite" : "",
+            "medium" : "",
+            "large" : 60000,
+        },
+    },
+    {   
+        "id" : 26,
+        "name" : "MIC Taskar Shotgun SCC-598",
+        "category" : "audio-mic",
+        "description" : "Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur nihil explicabo animi nisi labore recusandae aspernatur ad qui magni modi tempore natus minus veritatis accusamus itaque excepturi cumque, reiciendis rerum!",
+        "image" : "Mic-taskar-shotgun-SCC-598.jpeg",
+        "price" : {
+            "lite" : "",
+            "medium" : "",
+            "large" : 60000,
+        },
+    },
+    {   
+        "id" : 27,
+        "name" : "MIC Sony SN-909",
+        "category" : "audio-mic",
+        "description" : "Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur nihil explicabo animi nisi labore recusandae aspernatur ad qui magni modi tempore natus minus veritatis accusamus itaque excepturi cumque, reiciendis rerum!",
+        "image" : "mic-sony-sn-909.jpg",
+        "price" : {
+            "lite" : "",
+            "medium" : "",
+            "large" : 60000,
+        },
+    },
+    {   
+        "id" : 28,
+        "name" : "Kabel Audio Mixer to Camera",
+        "category" : "audio-mic",
+        "description" : "Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur nihil explicabo animi nisi labore recusandae aspernatur ad qui magni modi tempore natus minus veritatis accusamus itaque excepturi cumque, reiciendis rerum!",
+        "image" : "Kabel-audio-mixer-to-camera.jpeg",
+        "price" : {
+            "lite" : "",
+            "medium" : "",
+            "large" : 60000,
+        },
+    },
+];
 
-        $(".produk__content").append(productBoxHtml)
-    }
-}
+var standingData = [
+    {   
+        "id" : 29,
+        "name" : "Tripod Zomei Q111",
+        "category" : "standing",
+        "description" : "Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur nihil explicabo animi nisi labore recusandae aspernatur ad qui magni modi tempore natus minus veritatis accusamus itaque excepturi cumque, reiciendis rerum!",
+        "image" : "Tripod-zomei-Q111.jpg",
+        "price" : {
+            "lite" : "",
+            "medium" : "",
+            "large" : 60000,
+        },
+    },
+    {   
+        "id" : 30,
+        "name" : "Tripod Professional Beike BK-304",
+        "category" : "standing",
+        "description" : "Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur nihil explicabo animi nisi labore recusandae aspernatur ad qui magni modi tempore natus minus veritatis accusamus itaque excepturi cumque, reiciendis rerum!",
+        "image" : "Tripod-baike-BK-304.jpg",
+        "price" : {
+            "lite" : "",
+            "medium" : "",
+            "large" : 70000,
+        },
+    },
+    {   
+        "id" : 31,
+        "name" : "Tripod Professional WF-717",
+        "category" : "standing",
+        "description" : "Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur nihil explicabo animi nisi labore recusandae aspernatur ad qui magni modi tempore natus minus veritatis accusamus itaque excepturi cumque, reiciendis rerum!",
+        "image" : "Tripod-profesional-WF-717.jpeg",
+        "price" : {
+            "lite" : "",
+            "medium" : "",
+            "large" : 80000,
+        },
+    },
+    {   
+        "id" : 32,
+        "name" : "Monopod Professional YT-288",
+        "category" : "standing",
+        "description" : "Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur nihil explicabo animi nisi labore recusandae aspernatur ad qui magni modi tempore natus minus veritatis accusamus itaque excepturi cumque, reiciendis rerum!",
+        "image" : "Monopod-YT-288.jpeg",
+        "price" : {
+            "lite" : "",
+            "medium" : "",
+            "large" : 60000,
+        },
+    },
+    {   
+        "id" : 33,
+        "name" : "Monopod Takara ECO-M254A",
+        "category" : "standing",
+        "description" : "Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur nihil explicabo animi nisi labore recusandae aspernatur ad qui magni modi tempore natus minus veritatis accusamus itaque excepturi cumque, reiciendis rerum!",
+        "image" : "Monopod-Takara-ECO-M254A.jpeg",
+        "price" : {
+            "lite" : "",
+            "medium" : "",
+            "large" : 60000,
+        },
+    },
+    {   
+        "id" : 34,
+        "name" : "Lightstand Small",
+        "category" : "standing",
+        "description" : "Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur nihil explicabo animi nisi labore recusandae aspernatur ad qui magni modi tempore natus minus veritatis accusamus itaque excepturi cumque, reiciendis rerum!",
+        "image" : "Lightstand-small.jpeg",
+        "price" : {
+            "lite" : "",
+            "medium" : "",
+            "large" : 35000,
+        },
+    },
+    {   
+        "id" : 35,
+        "name" : "Lightstand Medium",
+        "category" : "standing",
+        "description" : "Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur nihil explicabo animi nisi labore recusandae aspernatur ad qui magni modi tempore natus minus veritatis accusamus itaque excepturi cumque, reiciendis rerum!",
+        "image" : "Lightstand-medium.jpeg",
+        "price" : {
+            "lite" : "",
+            "medium" : "",
+            "large" : 40000,
+        },
+    },
+    {   
+        "id" : 36,
+        "name" : "Lightstand Large",
+        "category" : "standing",
+        "description" : "Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur nihil explicabo animi nisi labore recusandae aspernatur ad qui magni modi tempore natus minus veritatis accusamus itaque excepturi cumque, reiciendis rerum!",
+        "image" : "Lightstand-large.jpeg",
+        "price" : {
+            "lite" : "",
+            "medium" : "",
+            "large" : 45000,
+        },
+    },
+    {   
+        "id" : 37,
+        "name" : "Standing Frame Foto",
+        "category" : "standing",
+        "description" : "Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur nihil explicabo animi nisi labore recusandae aspernatur ad qui magni modi tempore natus minus veritatis accusamus itaque excepturi cumque, reiciendis rerum!",
+        "image" : "standing-frame-foto.jpeg",
+        "price" : {
+            "lite" : "",
+            "medium" : "",
+            "large" : 60000,
+        },
+    },
+];
 
-function getAllCameraData(){
-    console.log(cameraData)
-    for (let i = 0; i < cameraData.length; i++) {
-        let data = cameraData[i];
-        let name = data.name;
-        let imageName = data.image;
-        let id = data.id;
-        let price = data.price;
-        let litePrice = price.lite;
-        let mediumPrice = price.medium;
-        let largePrice = price.large;
-        let displayNumberFormat;
+var lightingSetData = [
+    {   
+        "id" : 38,
+        "name" : "Flash Godox TT600",
+        "category" : "lighting",
+        "description" : "Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur nihil explicabo animi nisi labore recusandae aspernatur ad qui magni modi tempore natus minus veritatis accusamus itaque excepturi cumque, reiciendis rerum!",
+        "image" : "flash-godox-t600.jpg",
+        "price" : {
+            "lite" : "",
+            "medium" : "",
+            "large" : 60000,
+        },
+    },
+    {   
+        "id" : 39,
+        "name" : "Flash Canon 270 EX II",
+        "category" : "lighting",
+        "description" : "Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur nihil explicabo animi nisi labore recusandae aspernatur ad qui magni modi tempore natus minus veritatis accusamus itaque excepturi cumque, reiciendis rerum!",
+        "image" : "canon-flash-270.jpg",
+        "price" : {
+            "lite" : "",
+            "medium" : "",
+            "large" : 60000,
+        },
+    },
+    {   
+        "id" : 40,
+        "name" : "Flash YN 560 Mark III",
+        "category" : "lighting",
+        "description" : "Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur nihil explicabo animi nisi labore recusandae aspernatur ad qui magni modi tempore natus minus veritatis accusamus itaque excepturi cumque, reiciendis rerum!",
+        "image" : "YN560-III.jpg",
+        "price" : {
+            "lite" : "",
+            "medium" : "",
+            "large" : 60000,
+        },
+    },
+    {   
+        "id" : 41,
+        "name" : "Flash YN 560 Mark IV",
+        "category" : "lighting",
+        "description" : "Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur nihil explicabo animi nisi labore recusandae aspernatur ad qui magni modi tempore natus minus veritatis accusamus itaque excepturi cumque, reiciendis rerum!",
+        "image" : "YN560-IV.jpg",
+        "price" : {
+            "lite" : "",
+            "medium" : "",
+            "large" : 60000,
+        },
+    },
+    {   
+        "id" : 42,
+        "name" : "Flash YN 660",
+        "category" : "lighting",
+        "description" : "Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur nihil explicabo animi nisi labore recusandae aspernatur ad qui magni modi tempore natus minus veritatis accusamus itaque excepturi cumque, reiciendis rerum!",
+        "image" : "flash-YN660.jpg",
+        "price" : {
+            "lite" : "",
+            "medium" : "",
+            "large" : 60000,
+        },
+    },
+    {   
+        "id" : 43,
+        "name" : "Flash Godox SK400 II 1 Set",
+        "category" : "lighting",
+        "description" : "Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur nihil explicabo animi nisi labore recusandae aspernatur ad qui magni modi tempore natus minus veritatis accusamus itaque excepturi cumque, reiciendis rerum!",
+        "image" : "godox-SK400.jpg",
+        "price" : {
+            "lite" : "",
+            "medium" : "",
+            "large" : 210000,
+        },
+    },
+    {   
+        "id" : 44,
+        "name" : "Flash Godox SK400 II 2 Set",
+        "category" : "lighting",
+        "description" : "Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur nihil explicabo animi nisi labore recusandae aspernatur ad qui magni modi tempore natus minus veritatis accusamus itaque excepturi cumque, reiciendis rerum!",
+        "image" : "godox-SK400.jpg",
+        "price" : {
+            "lite" : "",
+            "medium" : "",
+            "large" : 360000,
+        },
+    },
+    {   
+        "id" : 45,
+        "name" : "Flash NiceF GA-200 1 Set",
+        "category" : "lighting",
+        "description" : "Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur nihil explicabo animi nisi labore recusandae aspernatur ad qui magni modi tempore natus minus veritatis accusamus itaque excepturi cumque, reiciendis rerum!",
+        "image" : "niceF-GA200.jpg",
+        "price" : {
+            "lite" : "",
+            "medium" : "",
+            "large" : 210000,
+        },
+    },
+    {   
+        "id" : 46,
+        "name" : "Softbox Godox",
+        "category" : "lighting",
+        "description" : "Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur nihil explicabo animi nisi labore recusandae aspernatur ad qui magni modi tempore natus minus veritatis accusamus itaque excepturi cumque, reiciendis rerum!",
+        "image" : "soft-box.jpg",
+        "price" : {
+            "lite" : "",
+            "medium" : "",
+            "large" : 60000,
+        },
+    },
+    {   
+        "id" : 47,
+        "name" : "Payung Flash",
+        "category" : "lighting",
+        "description" : "Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur nihil explicabo animi nisi labore recusandae aspernatur ad qui magni modi tempore natus minus veritatis accusamus itaque excepturi cumque, reiciendis rerum!",
+        "image" : "payung-flash.jpg",
+        "price" : {
+            "lite" : "",
+            "medium" : "",
+            "large" : 40000,
+        },
+    },
+    {   
+        "id" : 48,
+        "name" : "Hot Soe Flash",
+        "category" : "lighting",
+        "description" : "Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur nihil explicabo animi nisi labore recusandae aspernatur ad qui magni modi tempore natus minus veritatis accusamus itaque excepturi cumque, reiciendis rerum!",
+        "image" : "hot-soe-flash.jpg",
+        "price" : {
+            "lite" : "",
+            "medium" : "",
+            "large" : 30000,
+        },
+    },
+    {   
+        "id" : 49,
+        "name" : "Trigger Universal",
+        "category" : "lighting",
+        "description" : "Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur nihil explicabo animi nisi labore recusandae aspernatur ad qui magni modi tempore natus minus veritatis accusamus itaque excepturi cumque, reiciendis rerum!",
+        "image" : "trigger-universal.jpg",
+        "price" : {
+            "lite" : "",
+            "medium" : "",
+            "large" : 40000,
+        },
+    },
+    {   
+        "id" : 50,
+        "name" : "Trigger Godox X2T",
+        "category" : "lighting",
+        "description" : "Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur nihil explicabo animi nisi labore recusandae aspernatur ad qui magni modi tempore natus minus veritatis accusamus itaque excepturi cumque, reiciendis rerum!",
+        "image" : "x2t.jpg",
+        "price" : {
+            "lite" : "",
+            "medium" : "",
+            "large" : 60000,
+        },
+    },
+    {   
+        "id" : 51,
+        "name" : "Trigger Youngnuo 560 TX",
+        "category" : "lighting",
+        "description" : "Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur nihil explicabo animi nisi labore recusandae aspernatur ad qui magni modi tempore natus minus veritatis accusamus itaque excepturi cumque, reiciendis rerum!",
+        "image" : "trigger-youngnuo.jpg",
+        "price" : {
+            "lite" : "",
+            "medium" : "",
+            "large" : 60000,
+        },
+    },
+    {   
+        "id" : 52,
+        "name" : "Battery Eneloop Pro + Charger",
+        "category" : "lighting",
+        "description" : "Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur nihil explicabo animi nisi labore recusandae aspernatur ad qui magni modi tempore natus minus veritatis accusamus itaque excepturi cumque, reiciendis rerum!",
+        "image" : "eneloop-pro.jpg",
+        "price" : {
+            "lite" : "",
+            "medium" : "",
+            "large" : 30000,
+        },
+    },
+]
 
-        if (litePrice == "") {
-            if (mediumPrice == "") {
-                displayNumberFormat =  numberFormat(largePrice)
-            } else {
-                displayNumberFormat =  numberFormat(mediumPrice)
-            }
-        } else {
-            displayNumberFormat =  numberFormat(litePrice)
-        }
-        let productBoxHtml = '<a href="detail-product.html?product='+ id +'" class="produk-page__box">'+
-            '                    <div class="produk__box-image">'+
-            '                        <img src="./assets/img/produk/'+ imageName +'" alt="'+ name +'" loading="lazy">'+
-            '                    </div>'+
-            '                    <div class="produk__box-body">'+
-            '                        <h3 class="produk__title">' + name +
-            '                        </h3>'+
-            '                        <div class="produk__body-footer">'+
-            '                            <h5 class="produk__price">'+
-            '                                Rp. '+ displayNumberFormat +
-            '                            </h5>'+
-            '                        </div>'+
-            '                    </div>'+
-            '                </a>';
-
-        $(".produk-page__content").append(productBoxHtml)
-    }
-}
-
-function numberFormat(number){
-    if (number != "") {
-        let formattedNumber = number.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1,")
-        return formattedNumber;
-    }
-
-    return ""
-}
-
-
-function getDetailCameraData(id){
-    for (let i = 0; i < cameraData.length; i++) {
-        let data = cameraData[i];
-        let dataId = data.id;
-        let name = data.name;
-        let imageName = data.image;
-        let price = data.price;
-        let litePrice = numberFormat(price.lite);
-        let mediumPrice = numberFormat(price.medium);
-        let largePrice = numberFormat(price.large);
-
-        if (dataId == id) {
-            
-        var detailProdukHtml = '<div class="detail-produk__content">'+
-        '            <a href="product.html" class="back-link">'+
-        '               <svg width="22" height="22" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">'+
-        '                  <path d="M5 15H25M16.25 6.25L25 15L16.25 23.75" stroke="black" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>'+
-        '               </svg>'+
-        '               Lihat Semua Produk</a>'+
-        '            <div class="detail-produk__main">'+
-        '                <div class="detail-produk__image">'+
-        '                    <img src="/assets/img/produk/'+ imageName +'" alt="'+name+'">'+
-        '                </div>'+
-        '                <div class="detail-produk__text">'+
-        '                    <div class="detail-produk__header">'+
-        '                        <h1 class="detail-produk__title">'+name+'</h1>'+
-        '                        <h3 class="variant__title">Pilih Lama Peminjaman:</h3>'+
-        '                        <div class="variant__button-group">'+
-        '                            <button class="button-variant" variant-value="6" data-price="'+ litePrice +'" onclick="showPrice(this)">6 Jam</button>'+
-        '                            <button class="button-variant" variant-value="12" data-price="'+ mediumPrice +'" onclick="showPrice(this)">12 Jam</button>'+
-        '                            <button class="button-variant" variant-value="24" data-price="'+ largePrice +'" onclick="showPrice(this)">24 Jam</button>'+
-        '                        </div>'+
-        '                    </div>'+
-        '                    <div class="detail-produk__price">'+
-        '                        <h3 class="price__title">Total:</h3>'+
-        '                        <h1 class="price__number highlighted-text">Rp. 0</h1>'+
-        '                        <button class="book-produk" onclick="orderWhatsapp(this)" disabled>'+
-        '                            <svg width="25" height="25" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">'+
-        '                                <path fill-rule="evenodd" clip-rule="evenodd" d="M23.0037 7.04129C21.9642 5.99489 20.7273 5.16518 19.3648 4.60022C18.0023 4.03526 16.5412 3.74629 15.0663 3.75004C8.88125 3.75004 3.84625 8.78379 3.84375 14.9713C3.84375 16.9488 4.36 18.8788 5.34125 20.5813L3.75 26.395L9.69875 24.8338C11.3442 25.7295 13.1877 26.1992 15.0612 26.2H15.0663C21.25 26.2 26.285 21.1663 26.2875 14.9788C26.2917 13.5044 26.0037 12.0438 25.4401 10.6814C24.8765 9.31895 24.0484 8.08175 23.0037 7.04129ZM15.0663 24.3063H15.0625C13.3919 24.3065 11.752 23.857 10.315 23.005L9.975 22.8025L6.445 23.7288L7.38625 20.2875L7.165 19.935C6.23098 18.4481 5.73654 16.7273 5.73875 14.9713C5.74125 9.82879 9.925 5.64504 15.07 5.64504C16.2953 5.64231 17.509 5.88264 18.6408 6.3521C19.7726 6.82156 20.8001 7.51084 21.6637 8.38004C22.532 9.24509 23.2202 10.2737 23.6886 11.4063C24.157 12.5389 24.3962 13.7531 24.3925 14.9788C24.39 20.1213 20.2063 24.3063 15.0663 24.3063ZM20.1825 17.32C19.9013 17.1788 18.5238 16.5013 18.2662 16.4075C18.01 16.3138 17.8238 16.2675 17.6363 16.5475C17.4488 16.8275 16.9113 17.4588 16.7475 17.6463C16.5837 17.8338 16.42 17.8563 16.14 17.7163C15.86 17.5763 14.9563 17.28 13.885 16.325C13.0512 15.5813 12.4887 14.6638 12.325 14.3825C12.1612 14.1013 12.3075 13.95 12.4487 13.81C12.575 13.685 12.7288 13.4825 12.8687 13.3188C13.0087 13.155 13.055 13.0388 13.1488 12.8513C13.2425 12.6638 13.1962 12.5 13.125 12.36C13.055 12.2188 12.4937 10.8388 12.26 10.2775C12.0337 9.73379 11.8025 9.80629 11.63 9.79879C11.4513 9.79148 11.2726 9.78814 11.0938 9.78879C10.9516 9.79241 10.8117 9.82537 10.6828 9.8856C10.554 9.94582 10.439 10.032 10.345 10.1388C10.0875 10.42 9.36375 11.0975 9.36375 12.4775C9.36375 13.8575 10.3687 15.1913 10.5087 15.3788C10.6487 15.5663 12.4862 18.3975 15.2987 19.6125C15.9688 19.9013 16.4913 20.0738 16.8975 20.2038C17.5687 20.4175 18.18 20.3863 18.6637 20.315C19.2025 20.235 20.3225 19.6375 20.5562 18.9825C20.79 18.3275 20.79 17.7663 20.72 17.6488C20.65 17.5313 20.4613 17.46 20.1825 17.32Z" fill="#f3f3f3"/>'+
-        '                            </svg>'+
-        '                                '+
-        '                            Pesan Sekarang'+
-        '                        </button>'+
-        '                    </div>'+
-        '                </div>'+
-        '            </div>'+
-        '            <div class="detail-produk__sub-main">'+
-        '                <h1 class="sub-main__title">Description</h1>'+
-        '                <p class="sub-main__description">'+
-        '                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem ex saepe delectus, vero eligendi aut harum blanditiis dignissimos laboriosam rerum omnis ullam facilis quae, quisquam repellendus. Possimus accusamus suscipit omnis? Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sequi expedita incidunt laborum reprehenderit rem dolores eaque cumque natus quisquam veniam suscipit doloribus iusto, ducimus beatae in dolore distinctio nisi neque dolorum. Voluptatum sapiente corporis alias, unde iure excepturi soluta labore minus numquam et ab quae magnam fugit nemo, itaque doloremque. Alias sed ducimus sequi consequatur doloremque, dolorem laudantium repudiandae nisi commodi, sit quos distinctio rerum, ullam natus. Deserunt reprehenderit soluta eligendi placeat quasi cupiditate. Distinctio molestias autem cum, architecto, doloremque consectetur, dolorum magni optio vitae totam nihil. Eos ex distinctio vel porro doloribus quibusdam molestias nisi doloremque fugiat! Corrupti, molestiae?'+
-        '                </p>'+
-        '            </div>'+
-        '        </div>';
-
-        
-        $("#detail-produk__wrapper").append(detailProdukHtml)
-        
-        setTimeout(() => {
-            $(".button-variant").each(function(i){
-                if ($(this).attr("data-price") == "") {
-                    $(this).hide().attr("disabled", true)
-                }
-            });
-        }, 75);
-
-        }
-    }
-}
-
-function doShowLoad(){
-    $("body").addClass("on-load")
-    $(".loader").addClass("show")
-}
-
-function doCloseLoad(){
-    $("body").removeClass("on-load")
-    $(".loader").removeClass("show")
-}
-
-function doShowContent(){
-    $(".content-wrapper, .footer").fadeIn();
-}
-
+var accesoriesData = [
+    {   
+        "id" : 53,
+        "name" : "Zhiyun Crane 2 + Follow Focus",
+        "category" : "accesories",
+        "description" : "Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur nihil explicabo animi nisi labore recusandae aspernatur ad qui magni modi tempore natus minus veritatis accusamus itaque excepturi cumque, reiciendis rerum!",
+        "image" : "Zhiyu-crane-2-follow-focus.jpeg",
+        "price" : {
+            "lite" : "",
+            "medium" : "",
+            "large" : 260000,
+        },
+    },
+    {   
+        "id" : 54,
+        "name" : "Drone DJI Mavic Mini Combo + Pilot",
+        "category" : "accesories",
+        "description" : "Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur nihil explicabo animi nisi labore recusandae aspernatur ad qui magni modi tempore natus minus veritatis accusamus itaque excepturi cumque, reiciendis rerum!",
+        "image" : "DRONE-DJI-Mavic-Mini-Combo-pilot.jpeg",
+        "price" : {
+            "lite" : "",
+            "medium" : "",
+            "large" : 460000,
+        },
+    },
+    {   
+        "id" : 55,
+        "name" : "Steadycamp S40",
+        "category" : "accesories",
+        "description" : "Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur nihil explicabo animi nisi labore recusandae aspernatur ad qui magni modi tempore natus minus veritatis accusamus itaque excepturi cumque, reiciendis rerum!",
+        "image" : "Steadycamp-S40.jpeg",
+        "price" : {
+            "lite" : "",
+            "medium" : "",
+            "large" : 60000,
+        },
+    },
+    {   
+        "id" : 56,
+        "name" : "Zhiyun Crane 2 + Follow Focus",
+        "category" : "accesories",
+        "description" : "Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur nihil explicabo animi nisi labore recusandae aspernatur ad qui magni modi tempore natus minus veritatis accusamus itaque excepturi cumque, reiciendis rerum!",
+        "image" : "Zhiyu-crane-2-follow-focus.jpeg",
+        "price" : {
+            "lite" : "",
+            "medium" : "",
+            "large" : 260000,
+        },
+    },
+    {   
+        "id" : 57,
+        "name" : "Mini Walkie Talkie Baofeng",
+        "category" : "accesories",
+        "description" : "Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur nihil explicabo animi nisi labore recusandae aspernatur ad qui magni modi tempore natus minus veritatis accusamus itaque excepturi cumque, reiciendis rerum!",
+        "image" : "baofeng.jpeg",
+        "price" : {
+            "lite" : "",
+            "medium" : "",
+            "large" : 40000,
+        },
+    },
+]
