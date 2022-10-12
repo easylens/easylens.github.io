@@ -15,9 +15,9 @@
 
     <link rel="stylesheet" href="./assets/style/style.css">
 
-    <title>EasyLens - Halaman Detail Produk</title>
+    <title>EasyLens - Halaman Produk</title>
 </head>
-<body style="background-color: #fff;">
+<body>
 
     <div class="loader">
         <div class="loader__circle">
@@ -51,13 +51,28 @@
     </nav>
 
     
-    <div class="content-wrapper" id="detail-produk__wrapper">
-    </div>
+    <section class="content-wrapper" id="produk-page">
+        <div class="produk-page__header">
+            <h1 class="content-title">Semua Produk & Jasa</h1>
+            <select name="filter-content" id="filter-content">
+                <option value="semua">Semua Produk & Jasa</option>
+                <option value="camera">Kamera</option>
+                <option value="lensa">Lensa</option>
+                <option value="led">LED</option>
+                <option value="audio-mic">Audio Mic</option>
+                <option value="standing">Standing</option>
+                <option value="lighting">Lighting</option>
+                <option value="accesories">Accesories</option>
+            </select>
+        </div>
+        <div class="produk-page__content">
+        </div>
+    </section>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js" integrity="sha512-aVKKRRi/Q/YV+4mjoKBsE4x3H+BkegoM/em46NNlCqNTmUYADjBbeNefNxYV7giUp0VxICtqdrbqU7iVaeZNXA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="./assets/owlCarousel/owl.carousel.min.js"></script>
+    <script src="./assets/style/product.js"></script>
     <script src="./assets/style/data.js"></script>
     <script src="./assets/style/consume-data.js"></script>
-    <script src="./assets/style/detail-product.js"></script>
 </body>
 </html>

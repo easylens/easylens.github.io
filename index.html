@@ -34,6 +34,7 @@
                 <li class="navbar__list"><a href="#layanan" class="navbar__link">Layanan</a></li>
                 <li class="navbar__list"><a href="#produk" class="navbar__link">Produk & Jasa</a></li>
                 <li class="navbar__list"><a href="#cara-pemesanan" class="navbar__link">Cara Pemesanan</a></li>
+                <li class="navbar__list"><a href="#galeri" class="navbar__link">Galeri</a></li>
             </ul>
 
             <div class="navbar-overlay"></div>
@@ -99,7 +100,7 @@
                 <div class="layanan__content-box">
                     <img src="./assets/img/produk-kualitas-illustration.svg" alt="User Friendly Illustration" loading="lazy">
                     <h5 class="layanan__content-title">Produk & Jasa Berkualitas </h5>
-                </div>
+                </div>                                                                                                                                                                                                                                                                                                           
                 <div class="layanan__content-box">
                     <img src="./assets/img/payment-sistem-illustration.svg" alt="Online Payment System Illustration" loading="lazy">
                     <h5 class="layanan__content-title">Sistem Pembayaran Online</h5>
@@ -111,7 +112,7 @@
             <div class="section-header">
                 <h1 class="section-title">Apa Saja yang Ditawarkan?</h1>
 
-                <a href="product.html" id="lihat-produk">Lihat Semua Produk</a>
+                <a href="products.html" id="lihat-produk">Lihat Semua Produk</a>
             </div>
             <div class="produk__content owl-carousel owl-theme">
                 
@@ -123,33 +124,70 @@
             <div class="order__content">
                 <div class="order__box">
                     <div class="order__box-number">1</div>
-                    <img src="./assets/icon/user-icon.svg" alt="User Icon">
+                    <img src="./assets/icon/user-icon.svg" alt="User Icon" loading="lazy">
                     <h5 class="order__title">
                         Buat akun EasyLens sebagai Member
                     </h5>
                 </div>
                 <div class="order__box">
                     <div class="order__box-number">2</div>
-                    <img src="./assets/icon/card-check-icon.svg" alt="Identity Card Icon">
+                    <img src="./assets/icon/card-check-icon.svg" alt="Identity Card Icon" loading="lazy">
                     <h5 class="order__title">
                         Lengkapi identitas pada Halaman Profil
                     </h5>
                 </div>
                 <div class="order__box">
                     <div class="order__box-number">3</div>
-                    <img src="./assets/icon/camera-icon.svg" alt="Camera Icon">
+                    <img src="./assets/icon/camera-icon.svg" alt="Camera Icon" loading="lazy">
                     <h5 class="order__title">
                         Pilih Produk atau Jasa
                     </h5>
                 </div>
                 <div class="order__box">
                     <div class="order__box-number">4</div>
-                    <img src="./assets/icon/invoice-icon.svg" alt="Invoice Icon">
+                    <img src="./assets/icon/invoice-icon.svg" alt="Invoice Icon" loading="lazy">
                     <h5 class="order__title">
                         Tunjukkan Bukti Pemesanan
                     </h5>
                 </div>
             </div>
+        </section>
+
+        <section class="content-section" id="galeri">
+            <h1 class="section-title">Galeri</h1>
+            <div class="galeri__content">
+                <div class="galeri__box">
+                    <img src="./assets/img/testimoni/foto-produk-1.jpg" alt="Foto Produk 1" loading="lazy">
+                </div>
+                <div class="galeri__box">
+                    <img src="./assets/img/testimoni/foto-produk-2.jpg" alt="Foto Produk 2" loading="lazy">
+                </div>
+                <div class="galeri__box">
+                    <img src="./assets/img/testimoni/foto-produk-3.jpg" alt="Foto Produk 3" loading="lazy">
+                </div>
+                <div class="galeri__box">
+                    <img src="./assets/img/testimoni/foto-produk-4.jpg" alt="Foto Produk 4" loading="lazy">
+                </div>
+                <div class="galeri__box">
+                    <img src="./assets/img/testimoni/foto-produk-5.jpg" alt="Foto Produk 5" loading="lazy">
+                </div>
+                <div class="galeri__box">
+                    <img src="./assets/img/testimoni/foto-produk-6.jpg" alt="Foto Produk 6" loading="lazy">
+                </div>
+                <div class="galeri__box">
+                    <img src="./assets/img/testimoni/foto-produk-7.jpg" alt="Foto Produk 7" loading="lazy">
+                </div>
+                <div class="galeri__box">
+                    <img src="./assets/img/testimoni/foto-produk-8.jpg" alt="Foto Produk 8" loading="lazy">
+                </div>
+                <div class="galeri__box">
+                    <img src="./assets/img/testimoni/foto-produk-9.jpg" alt="Foto Produk 9" loading="lazy">
+                </div>
+                <div class="galeri__box">
+                    <img src="./assets/img/testimoni/foto-produk-10.jpg" alt="Foto Produk 10" loading="lazy">
+                </div>
+            </div>
+            <a href="galeri.html" class="to-galeri">Lihat Selengkapnya</a>
         </section>
     </div>
 
@@ -188,9 +226,18 @@
         </div>
     </footer>
 
+    <div class="lightbox">
+        <div class="lightbox-overlay"></div>
+        <button class="close-lightbox">&times;</button>
+        <div class="lightbox-content">
+            <!-- <img src="./assets/img/testimoni/foto-produk-1.jpg" alt="Foto Produk 1"> -->
+        </div>
+    </div>
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js" integrity="sha512-aVKKRRi/Q/YV+4mjoKBsE4x3H+BkegoM/em46NNlCqNTmUYADjBbeNefNxYV7giUp0VxICtqdrbqU7iVaeZNXA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="./assets/owlCarousel/owl.carousel.min.js"></script>
     <script src="./assets/style/script.js"></script>
     <script src="./assets/style/data.js"></script>
+    <script src="./assets/style/consume-data.js"></script>
 </body>
 </html>
